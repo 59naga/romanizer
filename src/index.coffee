@@ -18,16 +18,23 @@ class Romanizer
         return resolve tokenizer unless error
         return reject error
 
+  # http://d.hatena.ne.jp/Rewish/20100427/1272296260
   normalize: (string)->
-    string.replace /[Ａ-Ｚａ-ｚ０-９]/g,(str)->
+    normalized= string.replace /[Ａ-Ｚａ-ｚ０-９！？]/g,(str)->
       String.fromCharCode str.charCodeAt(0) - 65248
 
-  tokenize: (string)->
-    @tokenizer.then (tokenizer)->
-      tokenizer.tokenize string
+    # Extra ・／… to .
+    normalized= normalized.replace /・/g,'.'
+    normalized= normalized.replace /…/g,'...'
+
+    # Extra 、／。 to ,.
+    normalized= normalized.replace /、/g,','
+    normalized= normalized.replace /。/g,'.'
 
   romanize: (string)->
-    @tokenize @normalize string
+    normalized= @normalize string
+
+    @tokenize normalized
     .then (words)->
       chunks= []
       marked= []
@@ -35,7 +42,7 @@ class Romanizer
       words.forEach (word)->
         isKatakana= word.surface_form.match(/[ァ-ヶ]/)?
         isEnglish= word.surface_form.match(/[\w]/)?
-        isMark= word.surface_form.match(/[']/)
+        isMark= word.surface_form.match(/['!?,.]/)
 
         romanized=
           switch
@@ -63,6 +70,10 @@ class Romanizer
         chunks.push romanized if romanized?.trim()
 
       chunks.join ' '
+
+  tokenize: (string)->
+    @tokenizer.then (tokenizer)->
+      tokenizer.tokenize string
 
 module.exports= new Romanizer
 module.exports.Romanizer= Romanizer

@@ -32,14 +32,23 @@ romanizer.romanize('The quick brown fox jumps over the lazy dog')
 
 romanizer.romanize("〔賭博の〕チップを換金する表現パターンcash ［hand, pass］ in one's chips")
 .then(function(romaji) {
-  console.log(romaji);// "tobaku no chippu o kankin suru hyōgen patān cash hand pass in one's chips"
+  console.log(romaji);// "tobaku no chippu o kankin suru hyōgen patān cash hand,pass in one's chips"
 });
 
 romanizer.romanize('みなさんご存じunknown芋')
 .then(function(romaji) {
   console.log(romaji);// 'minasan gozonji unknown imo'
 });
+
+romanizer.romanize('何だと思う？これね、ミキプルーンの苗木。')
+.then(function(romaji) {
+  console.log(romaji);// 'nani da to omō? kore ne, mikipurūn no naegi.'
+});
 ```
+
+# 課題
+
+* 半角カナには対応していません。
 
 # Related projects
 * __romanizer__
