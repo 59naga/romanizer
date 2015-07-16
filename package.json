@@ -1,5 +1,5 @@
 {
-  "name": "romanize",
+  "name": "romanizer",
   "version": "0.0.0-alpha",
   "description": "romanize the japanese",
   "browser": {
@@ -40,10 +40,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/59naga/romanize.git"
+    "url": "git+https://github.com/59naga/romanizer.git"
   },
   "bugs": {
-    "url": "https://github.com/59naga/romanize/issues"
+    "url": "https://github.com/59naga/romanizer/issues"
   },
-  "homepage": "https://github.com/59naga/romanize#readme"
+  "homepage": "https://github.com/59naga/romanizer#readme"
 }
