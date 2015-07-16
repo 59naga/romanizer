@@ -1,0 +1,49 @@
+{
+  "name": "romanize",
+  "version": "0.0.0-alpha",
+  "description": "romanize the japanese",
+  "browser": {
+    "./src": false
+  },
+
+  "scripts": {
+    "start": "jasminetea --watch --timeout 10000",
+    "test": "jasminetea --lint --cover --report --timeout 10000",
+
+    "prepublish": "node -e \"if(process.env.TRAVIS){}else{process.exit(1)}\" && npm run compile || echo skip prepublish",
+    "compile": "coffee --bare --compile index.coffee",
+    "postcompile": "coffee --output lib --bare --compile src"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm test"
+    }
+  },
+
+  "dependencies": {
+    "bluebird": "^2.9.34",
+    "japanese": "^1.1.0",
+    "kuromoji": "0.0.2"
+  },
+  "devDependencies": {
+    "ghooks": "^0.3.2",
+    "jasminetea": "^0.2.1",
+    "object-parser-cli": "0.0.1-alpha.1"
+  },
+  
+  "keywords": [
+    "japanese",
+    "kuromoji",
+    "romanize"
+  ],
+  "author": "59naga <i59naga@icloud.com> (http://berabou.me)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/59naga/romanize.git"
+  },
+  "bugs": {
+    "url": "https://github.com/59naga/romanize/issues"
+  },
+  "homepage": "https://github.com/59naga/romanize#readme"
+}
