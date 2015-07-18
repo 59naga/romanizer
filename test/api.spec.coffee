@@ -68,3 +68,21 @@ describe 'romanizer',->
       .then (romaji)->
         expect(romaji).toBe romanized
         done()
+
+    it 'たっぷんたっぷんすればいいんじゃね',(done)->
+      japanese= 'たっぷんたっぷんすればいいんじゃね'
+      romanized= "ta' puntappunsurebaiinjane"
+
+      romanizer.romanize japanese
+      .then (romaji)->
+        expect(romaji).toBe romanized
+        done()
+
+    it 'エターナルフォースブリザード',(done)->
+      japanese= 'エターナルフォースブリザード'
+      romanized= 'etānarufōsuburizādo'
+
+      romanizer.romanize japanese
+      .then (romaji)->
+        expect(romaji).toBe romanized
+        done()

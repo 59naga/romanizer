@@ -40,6 +40,7 @@ class Romanizer
       marked= []
 
       words.forEach (word)->
+        isHiragana= word.surface_form.match(/[ぁ-ゖ]/)?
         isKatakana= word.surface_form.match(/[ァ-ヶ]/)?
         isEnglish= word.surface_form.match(/[\w]/)?
         isMark= word.surface_form.match(/['!?,.]/)
@@ -49,7 +50,7 @@ class Romanizer
             when word.reading
               japanese.romanize word.reading
 
-            when isKatakana
+            when isHiragana or isKatakana
               japanese.romanize word.surface_form
 
             when isEnglish

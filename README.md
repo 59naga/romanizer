@@ -17,32 +17,42 @@ var romanizer= require('romanizer');
 
 romanizer.romanize('日本語でok')
 .then(function(romaji) {
-  console.log(romaji);// 'nihongo de ok'
+  console.log(romaji);// nihongo de ok
 });
 
 romanizer.romanize('オウフｗｗｗいわゆるストレートな質問キタコレですねｗｗｗ')
 .then(function(romaji) {
-  console.log(romaji);// 'ōfu www iwayuru sutorēto na shitsumon kitakore desu ne www'
+  console.log(romaji);// ōfu www iwayuru sutorēto na shitsumon kitakore desu newww'
 });
 
 romanizer.romanize('The quick brown fox jumps over the lazy dog')
 .then(function(romaji) {
-  console.log(romaji);// 'The quick brown fox jumps over the lazy dog'
+  console.log(romaji);// The quick brown fox jumps over the lazy dog
 });
 
 romanizer.romanize("〔賭博の〕チップを換金する表現パターンcash ［hand, pass］ in one's chips")
 .then(function(romaji) {
-  console.log(romaji);// "tobaku no chippu o kankin suru hyōgen patān cash hand,pass in one's chips"
+  console.log(romaji);// tobaku no chippu o kankin suru hyōgen patān cash hand,pass in one's chips
 });
 
 romanizer.romanize('みなさんご存じunknown芋')
 .then(function(romaji) {
-  console.log(romaji);// 'minasan gozonji unknown imo'
+  console.log(romaji);// minasan gozonji unknown imo
 });
 
 romanizer.romanize('何だと思う？これね、ミキプルーンの苗木。')
 .then(function(romaji) {
-  console.log(romaji);// 'nani da to omō? kore ne, mikipurūn no naegi.'
+  console.log(romaji);// nani da to omō? kore ne, mikipurūn no naegi.
+});
+
+romanizer.romanize('たっぷんたっぷんすればいいんじゃね')
+.then(function(romaji) {
+  console.log(romaji);// ta' puntappunsurebaiinjane
+});
+
+romanizer.romanize('エターナルフォースブリザード')
+.then(function(romaji) {
+  console.log(romaji);// etānarufōsuburizādo
 });
 ```
 
