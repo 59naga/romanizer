@@ -50,7 +50,7 @@ romanizer.romanize('たっぷんたっぷんすればいいんじゃね')
   console.log(romaji);// ta' puntappunsurebaiinjane
 });
 
-romanizer.romanize('エターナルフォースブリザード')
+romanizer.romanize('ｴﾀｰﾅﾙﾌｫｰｽﾌﾞﾘｻﾞｰﾄﾞ')
 .then(function(romaji) {
   console.log(romaji);// etānarufōsuburizādo
 });
@@ -58,7 +58,7 @@ romanizer.romanize('エターナルフォースブリザード')
 
 # 課題
 
-* 半角カナには対応していません。
+* <del>半角カナには対応していません。</del><ins>対応しました</ins>
 
 # Related projects
 * __romanizer__

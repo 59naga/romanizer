@@ -8,9 +8,9 @@ describe 'romanizer',->
       normalized= romanizer.normalize 'ＡＺａｚ０９！？・…、。'
       expect(normalized).toBe 'AZaz09!?....,.'
 
-    xit 'TODO: hankaku to zenkaku',->
+    it 'hankaku to zenkaku',->
       # coffeelint: disable=max_line_length
-      normalized= romanizer.normalize 'ｶﾞｷﾞｸﾞｹﾞｺﾞｻﾞｼﾞｽﾞｾﾞｿﾞﾀﾞﾁﾞﾂﾞﾃﾞﾄﾞﾊﾞﾊﾟﾋﾞﾋﾟﾌﾞﾌﾟﾍﾞﾍﾟﾎﾞﾎﾟｳﾞｧｱｨｲｩｳｪｴｫｵｶｷｸｹｺｻｼｽｾｿﾀﾁｯﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓｬﾔｭﾕｮﾖﾗﾘﾙﾚﾛﾜﾜｦﾝ'
+      normalized= romanizer.normalize 'ｶﾞｷﾞｸﾞｹﾞｺﾞｻﾞｼﾞｽﾞｾﾞｿﾞﾀﾞﾁﾞﾂﾞﾃﾞﾄﾞﾊﾞﾊﾟﾋﾞﾋﾟﾌﾞﾌﾟﾍﾞﾍﾟﾎﾞﾎﾟｳﾞｧｱｨｲｩｳｪｴｫｵｶｷｸｹｺｻｼｽｾｿﾀﾁｯﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓｬﾔｭﾕｮﾖﾗﾘﾙﾚﾛﾜｦﾝ'
       expect(normalized).toBe 'ガギグゲゴザジズゼゾダヂヅデドバパビピブプベペボポヴァアィイゥウェエォオカキクケコサシスセソタチッツテトナニヌネノハヒフヘホマミムメモャヤュユョヨラリルレロワヲン'
       # coffeelint: enable=max_line_length
 
@@ -78,8 +78,8 @@ describe 'romanizer',->
         expect(romaji).toBe romanized
         done()
 
-    it 'エターナルフォースブリザード',(done)->
-      japanese= 'エターナルフォースブリザード'
+    it 'ｴﾀｰﾅﾙﾌｫｰｽﾌﾞﾘｻﾞｰﾄﾞ',(done)->
+      japanese= 'ｴﾀｰﾅﾙﾌｫｰｽﾌﾞﾘｻﾞｰﾄﾞ'
       romanized= 'etānarufōsuburizādo'
 
       romanizer.romanize japanese

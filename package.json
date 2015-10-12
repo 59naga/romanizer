@@ -1,18 +1,19 @@
 {
   "name": "romanizer",
-  "version": "0.0.1-alpha",
+  "version": "0.0.1",
   "description": "romanize the japanese",
-  "browser": {
-    "./src": false
-  },
+
+  "main": "lib",
+  "files": [
+    "lib"
+  ],
 
   "scripts": {
     "start": "jasminetea --watch --timeout 10000",
     "test": "jasminetea --lint --cover --report --timeout 10000",
 
     "prepublish": "node -e \"if(process.env.TRAVIS){}else{process.exit(1)}\" && npm run compile || echo skip prepublish",
-    "compile": "coffee --bare --compile index.coffee",
-    "postcompile": "coffee --output lib --bare --compile src"
+    "compile": "coffee --output lib --bare --compile src"
   },
   "config": {
     "ghooks": {
@@ -28,11 +29,12 @@
   "devDependencies": {
     "ghooks": "^0.3.2",
     "jasminetea": "^0.2.1",
-    "object-parser-cli": "0.0.1-alpha.1"
+    "object-parser-cli": "0.0.1"
   },
   
   "keywords": [
     "japanese",
+    "romaji",
     "kuromoji",
     "romanize"
   ],

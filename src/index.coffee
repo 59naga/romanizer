@@ -23,6 +23,18 @@ class Romanizer
     normalized= string.replace /[Ａ-Ｚａ-ｚ０-９！？]/g,(str)->
       String.fromCharCode str.charCodeAt(0) - 65248
 
+    # coffeelint: disable=max_line_length
+    specials= {'ｶﾞ':'ガ','ｷﾞ':'ギ','ｸﾞ':'グ','ｹﾞ':'ゲ','ｺﾞ':'ゴ','ｻﾞ':'ザ','ｼﾞ':'ジ','ｽﾞ':'ズ','ｾﾞ':'ゼ','ｿﾞ':'ゾ','ﾀﾞ':'ダ','ﾁﾞ':'ヂ','ﾂﾞ':'ヅ','ﾃﾞ':'デ','ﾄﾞ':'ド','ﾊﾞ':'バ','ﾊﾟ':'パ','ﾋﾞ':'ビ','ﾋﾟ':'ピ','ﾌﾞ':'ブ','ﾌﾟ':'プ','ﾍﾞ':'ベ','ﾍﾟ':'ペ','ﾎﾞ':'ボ','ﾎﾟ':'ポ','ｳﾞ':'ヴ'}
+    specialChars= new RegExp '('+(Object.keys specials).join('|')+')','g'
+    normalized= normalized.replace specialChars,(str)->
+      specials[str]
+    # coffeelint: enable=max_line_length
+
+    hankaku= 'ｧｱｨｲｩｳｪｴｫｵｶｷｸｹｺｻｼｽｾｿﾀﾁｯﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓｬﾔｭﾕｮﾖﾗﾘﾙﾚﾛﾜｦﾝｰ'
+    zenkaku= 'ァアィイゥウェエォオカキクケコサシスセソタチッツテトナニヌネノハヒフヘホマミムメモャヤュユョヨラリルレロワヲンー'
+    normalized= normalized.replace (new RegExp "[#{hankaku}]",'g'),(str)->
+      zenkaku[hankaku.indexOf str]
+
     # Extra ・／… to .
     normalized= normalized.replace /・/g,'.'
     normalized= normalized.replace /…/g,'...'
