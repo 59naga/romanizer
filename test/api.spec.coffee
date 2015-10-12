@@ -1,6 +1,9 @@
 # Dependencies
 romanizer= require '../src'
 
+# Environment
+jasmine.DEFAULT_TIMEOUT_INTERVAL= 10000
+
 # Specs
 describe 'romanizer',->
   describe '.normalize',->
