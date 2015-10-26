@@ -56,9 +56,9 @@ romanizer.romanize('ｴﾀｰﾅﾙﾌｫｰｽﾌﾞﾘｻﾞｰﾄﾞ')
 });
 ```
 
-# 課題
+# 開発動機
 
-* <del>半角カナには対応していません。</del><ins>対応しました</ins>
+Macの`Web Speech API`で選択できる日本語を喋れない声に[無理やり喋らせる](http://jsdo.it/59naga/romanized-speech)ために開発されました。
 
 # Related projects
 * __romanizer__
